@@ -26,10 +26,13 @@ Nukkit 配套使用
 Dolemgo 数据包使用二进制加密传输，该服务器端只能接受数据包
 并处理后返回结果(Http)，不能主动发出数据包。
 内容大致如下:
+
 包名|密钥随机校验码|byte[]
 
 数据包清单
 ------------
 HandShakePacket 握手数据包
+
 ServerAuthPacket 子服务器连接数据包
+
 ServerClosePacket 子服务器关闭数据包
