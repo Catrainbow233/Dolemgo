@@ -34,6 +34,7 @@ public class Server {
     public HashMap<String, Player> onlinePlayers;
 
     public Server(Log logger, String dataPath, String pluginPath) {
+        instance = this;
         this.isRunning = true;
         this.runningTime = System.currentTimeMillis();
         this.logger = logger;
@@ -62,10 +63,7 @@ public class Server {
         this.console = new TerminalConsole(this);
         this.onlinePlayers = new HashMap<>();
         this.consoleSender = new ConsoleCommandSender(this);
-        this.raknetInterface = new RaknetInterface(this);
 
-
-        instance = this;
         this.properties.save(true);
         this.start();
     }
@@ -74,10 +72,13 @@ public class Server {
         this.console.getConsoleThread().start();
         this.getLogger().info("Loading plugins...");
         this.pluginManager.enableAllPlugins();
+        this.raknetInterface = new RaknetInterface(this);
         this.raknetInterface.start();
 
         this.isRunning = true;
         this.getLogger().info("Done! proxy is running on " + port + ". (" + (System.currentTimeMillis() - this.runningTime) + "ms)");
+        this.tickProcessor();
+        this.shutdown();
     }
 
     public CommandMap getCommandMap() {
@@ -119,6 +120,23 @@ public class Server {
 
     public ServerScheduler getScheduler() {
         return this.scheduler;
+    }
+
+    public void tickProcessor() {
+        while (this.isRunning) {
+            this.tick();
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                this.logger.error(e);
+            }
+        }
+    }
+
+    private void tick() {
+        ++this.currentTick;
+        this.scheduler.mainThreadHeartbeat(this.currentTick);
+
     }
 
 

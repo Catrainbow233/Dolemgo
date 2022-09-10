@@ -38,7 +38,7 @@ public class RaknetInterface {
         this.proxy.getScheduler().scheduleAsyncTask(new AsyncTask() {
             @Override
             public void onRun() {
-                int port = proxy.port;
+                int port = ProxySetting.getPort();
 
                 final EventLoopGroup bossGroup = new NioEventLoopGroup(1);
                 final EventLoopGroup workerGroup = new NioEventLoopGroup();
@@ -63,10 +63,9 @@ public class RaknetInterface {
                     final Channel ch = b.bind(port).sync().channel();
                     ch.closeFuture().sync();
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                } finally {
                     bossGroup.shutdownGracefully();
                     workerGroup.shutdownGracefully();
+                    throw new RuntimeException(e);
                 }
             }
         });
