@@ -5,14 +5,17 @@ import net.catrainbow.dolemgo.command.*;
 import net.catrainbow.dolemgo.command.console.TerminalConsole;
 import net.catrainbow.dolemgo.command.utils.CommandUtils;
 import net.catrainbow.dolemgo.network.RaknetInterface;
+import net.catrainbow.dolemgo.network.protocol.Network;
 import net.catrainbow.dolemgo.plugin.PluginManager;
 import net.catrainbow.dolemgo.scheduler.ServerScheduler;
 import net.catrainbow.dolemgo.utils.Config;
 import net.catrainbow.dolemgo.utils.ConfigSection;
+import net.catrainbow.dolemgo.utils.RSA;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Server {
     public boolean isRunning;
@@ -31,7 +34,12 @@ public class Server {
     public final int port;
     private int currentTick = 0;
 
+    public Network networkInterface;
     public HashMap<String, Player> onlinePlayers;
+
+    public String publicKey;
+
+    public String privateKey;
 
     public Server(Log logger, String dataPath, String pluginPath) {
         instance = this;
@@ -49,20 +57,23 @@ public class Server {
         this.getLogger().info("Loading server properties...");
         this.properties = new Config(this.dataPath + "server.properties", Config.PROPERTIES, new ConfigSection() {
             {
-                put("user", "dolemgo");
-                put("password", "123456");
+                put("private_key", getPrivateKey());
+                put("public_key", getPublicKey());
                 put("server-ip", "0:0:0:0");
                 put("port", 88);
             }
         });
 
         this.port = Integer.parseInt(this.properties.getString("port"));
+        this.privateKey = this.properties.getString("private_key");
+        this.publicKey = this.properties.getString("public_key");
         this.scheduler = new ServerScheduler();
         this.pluginManager = new PluginManager(this);
         this.commandMap = new DefaultCommandMap(this, SimpleCommandMap.DEFAULT_PREFIX);
         this.console = new TerminalConsole(this);
         this.onlinePlayers = new HashMap<>();
         this.consoleSender = new ConsoleCommandSender(this);
+        this.networkInterface = new Network();
 
         this.properties.save(true);
         this.start();
@@ -136,7 +147,24 @@ public class Server {
     private void tick() {
         ++this.currentTick;
         this.scheduler.mainThreadHeartbeat(this.currentTick);
+    }
 
+    protected String getPrivateKey() {
+        try {
+            return RSA.getRSAKeyString(1024).get(1);
+        } catch (Exception e) {
+            this.getLogger().error(e);
+            return null;
+        }
+    }
+
+    private String getPublicKey() {
+        try {
+            return RSA.getRSAKeyString(1024).get(0);
+        } catch (Exception e) {
+            this.getLogger().error(e);
+            return null;
+        }
     }
 
 

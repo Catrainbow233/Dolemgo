@@ -13,6 +13,11 @@ public abstract class Packet {
     public void decode() {
     }
 
+    public void clear() {
+        this.buffer = new byte[]{};
+        this.offset = 0;
+    }
+
     public int length() {
         return this.buffer.length;
     }

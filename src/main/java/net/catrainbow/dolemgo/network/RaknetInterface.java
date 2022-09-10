@@ -12,6 +12,7 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import net.catrainbow.dolemgo.Server;
+import net.catrainbow.dolemgo.network.http.action.DataPacketAction;
 import net.catrainbow.dolemgo.network.http.action.common.DefaultAction;
 import net.catrainbow.dolemgo.network.http.handler.ProxyActionHandler;
 import net.catrainbow.dolemgo.scheduler.AsyncTask;
@@ -26,7 +27,8 @@ public class RaknetInterface {
 
     public void start() {
         try {
-            ProxySetting.setAction("/dolemgo", DefaultAction.class);
+            //数据包监听
+            ProxySetting.setAction("/handler", DataPacketAction.class);
             ProxySetting.setPort(this.proxy.port);
             this.start(this.proxy);
         } catch (InterruptedException e) {
