@@ -14,7 +14,7 @@ public class ErrorAction implements ProxyActionInterface {
 
     public final static String ERROR_PARAM_NAME = "_e";
 
-    private final static String TEMPLATE_ERROR = "<!DOCTYPE html><html><head><title>LoServer - Error report</title><style>h1,h3 {color:white; background-color: gray;}</style></head><body><h1>HTTP Status {} - {}</h1><hr size=\"1\" noshade=\"noshade\" /><p>{}</p><hr size=\"1\" noshade=\"noshade\" /><h3>Dolemgo Server</h3></body></html>";
+    private final static String TEMPLATE_ERROR = "<!DOCTYPE html><html><head><title>Dolemgo - Error report</title><style>h1,h3 {color:white; background-color: gray;}</style></head><body><h1>HTTP Status {} - {}</h1><hr size=\"1\" noshade=\"noshade\" /><p>{}</p><hr size=\"1\" noshade=\"noshade\" /><h3>Dolemgo Server</h3></body></html>";
 
     @Override
     public void doAction(ProxyRequest request, ProxyResponse response) {
