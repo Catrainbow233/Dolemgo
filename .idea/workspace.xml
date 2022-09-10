@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec567912-7c61-49a5-ab80-c29a890dfc39" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2EU1iSK2YS0TF3Mrvxq2Gczw1ln" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dell/Desktop/WatchDogProject/DolemgoGit/Dolemgo/src/main/java/net/catrainbow/dolemgo/utils&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Desktop\WatchDogProject\DolemgoGit\Dolemgo\src\main\java\net\catrainbow\dolemgo\utils" />
+      <recent name="C:\Users\dell\Desktop\WatchDogProject\DolemgoGit\Dolemgo\src\main\java\net\catrainbow\dolemgo\event" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Desktop\WatchDogProject\DolemgoGit\Dolemgo\src\main\java\net\catrainbow\dolemgo\utils\exceptions" />
+      <recent name="C:\Users\dell\Desktop\WatchDogProject\DolemgoGit\Dolemgo\src\main\java\net\catrainbow\dolemgo\command" />
+      <recent name="C:\Users\dell\Desktop\WatchDogProject\DolemgoGit\Dolemgo\src\main\java\net\catrainbow\dolemgo\command\console" />
+      <recent name="C:\Users\dell\Desktop\WatchDogProject\DolemgoGit\Dolemgo\src\main\java\net\catrainbow\dolemgo" />
+      <recent name="C:\Users\dell\Desktop\WatchDogProject\DolemgoGit\Dolemgo\src\main\java\net\catrainbow\dolemgo\event" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Dolemgo">
+    <configuration name="Dolemgo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="net.catrainbow.dolemgo.Dolemgo" />
+      <module name="Dolemgo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.catrainbow.dolemgo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dolemgo-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/Dolemgo-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LoServer-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/LoServer-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Dolemgo" />
+        <item itemvalue="JAR Application.Dolemgo-jar-with-dependencies.jar" />
+        <item itemvalue="JAR Application.LoServer-jar-with-dependencies.jar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec567912-7c61-49a5-ab80-c29a890dfc39" name="Changes" comment="" />
+      <created>1662635480567</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662635480567</updated>
+    </task>
+    <servers />
+  </component>
+</project>

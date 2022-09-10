@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nukkitx-repo-snapshot" />
+      <option name="name" value="nukkitx-repo-snapshot" />
+      <option name="url" value="https://repo.nukkitx.com/maven-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="aikar" />
+      <option name="name" value="aikar" />
+      <option name="url" value="https://repo.aikar.co/content/groups/aikar/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="waterdog" />
+      <option name="name" value="waterdog" />
+      <option name="url" value="https://repo.waterdog.dev/artifactory/main/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nukkitx-repo-release" />
+      <option name="name" value="nukkitx-repo-release" />
+      <option name="url" value="https://repo.nukkitx.com/maven-releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nukkitx-repo-snapshot" />
+      <option name="name" value="nukkitx-repo-snapshot" />
+      <option name="url" value="https://repo.opencollab.dev/maven-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nukkitx-repo-release" />
+      <option name="name" value="nukkitx-repo-release" />
+      <option name="url" value="https://repo.opencollab.dev/maven-releases/" />
+    </remote-repository>
+  </component>
+</project>
