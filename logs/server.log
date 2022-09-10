@@ -1,7 +1,2 @@
-2022-09-10 14:10:32.156 [main] INFO  - Dolemgo Proxy started 
-2022-09-10 14:10:32.168 [main] INFO  - Loading server properties...
-2022-09-10 14:10:32.282 [main] ERROR - null
-java.lang.NullPointerException: null
-	at net.catrainbow.dolemgo.utils.Config.save(Config.java:237) ~[classes/:?]
-	at net.catrainbow.dolemgo.Server.<init>(Server.java:67) ~[classes/:?]
-	at net.catrainbow.dolemgo.Dolemgo.main(Dolemgo.java:16) [classes/:?]
+2022-09-10 15:38:56.821 [main] INFO  - }浍诘
+2022-09-10 15:38:56.829 [main] INFO  - |测试
