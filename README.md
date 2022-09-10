@@ -12,6 +12,10 @@ Dolemgo 是一款服务于核能努基特的网络中转服务端
 -------------
 输入 `java -jar dolemgo.jar`.
 
+构建
+-------------
+前往: https://ci.lt-name.cn/job/Dolemgo
+
 数据包通信
 -------------
 Dolemgo 有一套完整的通信系统，基于Http，并使用RSA+AES加密传输数据包
