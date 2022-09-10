@@ -1,6 +1,7 @@
 package net.catrainbow.dolemgo.plugin;
 
 import net.catrainbow.dolemgo.Server;
+import net.catrainbow.dolemgo.event.common.PluginLoadEvent;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor;
 import org.yaml.snakeyaml.representer.Representer;
@@ -96,6 +97,7 @@ public class PluginManager {
 
         this.proxy.getLogger().info("Loaded plugin " + config.getName() + " successfully! (version=" + config.getVersion() + ",author=" + config.getAuthor() + ")");
         this.pluginMap.put(config.getName(), plugin);
+        Server.getInstance().eventManager.callEvent(new PluginLoadEvent(plugin));
         return plugin;
     }
 

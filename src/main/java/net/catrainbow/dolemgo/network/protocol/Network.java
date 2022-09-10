@@ -1,6 +1,7 @@
 package net.catrainbow.dolemgo.network.protocol;
 
 import net.catrainbow.dolemgo.Server;
+import net.catrainbow.dolemgo.event.common.DataPacketReceiveEvent;
 import net.catrainbow.dolemgo.network.http.ProxyResponse;
 import net.catrainbow.dolemgo.utils.AES;
 import net.catrainbow.dolemgo.utils.RSA;
@@ -24,7 +25,12 @@ public class Network {
             original = new String(AES.decrypt(original.getBytes(), keyV2.getBytes()));
             packet.clear();
             packet.putString(original);
-
+            packet.decode();
+            DataPacketReceiveEvent event = new DataPacketReceiveEvent(packet, response);
+            Server.getInstance().eventManager.callEvent(event);
+            if (!event.isCancelled()) {
+                response = event.resend;
+            }
         } catch (Exception e) {
             Server.getInstance().getLogger().error("Error while handle packet:\nID=" + packet.id, e);
         }

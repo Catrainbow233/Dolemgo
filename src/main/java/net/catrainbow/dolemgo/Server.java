@@ -4,6 +4,8 @@ import cn.hutool.log.Log;
 import net.catrainbow.dolemgo.command.*;
 import net.catrainbow.dolemgo.command.console.TerminalConsole;
 import net.catrainbow.dolemgo.command.utils.CommandUtils;
+import net.catrainbow.dolemgo.event.EventManager;
+import net.catrainbow.dolemgo.event.common.ServerStartEvent;
 import net.catrainbow.dolemgo.network.RaknetInterface;
 import net.catrainbow.dolemgo.network.protocol.Network;
 import net.catrainbow.dolemgo.plugin.PluginManager;
@@ -33,13 +35,12 @@ public class Server {
     private TerminalConsole console;
     public final int port;
     private int currentTick = 0;
-
     public Network networkInterface;
     public HashMap<String, Player> onlinePlayers;
-
     public String publicKey;
-
     public String privateKey;
+
+    public EventManager eventManager;
 
     public Server(Log logger, String dataPath, String pluginPath) {
         instance = this;
@@ -74,6 +75,7 @@ public class Server {
         this.onlinePlayers = new HashMap<>();
         this.consoleSender = new ConsoleCommandSender(this);
         this.networkInterface = new Network();
+        this.eventManager = new EventManager(this);
 
         this.properties.save(true);
         this.start();
@@ -87,6 +89,7 @@ public class Server {
         this.raknetInterface.start();
 
         this.isRunning = true;
+        this.eventManager.callEvent(new ServerStartEvent(this));
         this.getLogger().info("Done! proxy is running on " + port + ". (" + (System.currentTimeMillis() - this.runningTime) + "ms)");
         this.tickProcessor();
         this.shutdown();

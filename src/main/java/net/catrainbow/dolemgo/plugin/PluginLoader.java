@@ -51,13 +51,13 @@ public class PluginLoader {
 
     protected PluginYAML loadPluginData(File file, Yaml yaml) {
         try (JarFile pluginJar = new JarFile(file)) {
-            JarEntry configEntry = pluginJar.getJarEntry("waterdog.yml");
+            JarEntry configEntry = pluginJar.getJarEntry("dolemgo.yml");
             if (configEntry == null) {
                 configEntry = pluginJar.getJarEntry("plugin.yml");
             }
 
             if (configEntry == null) {
-                Server.getInstance().getLogger().warn("Jar file " + file.getName() + " doesnt contain a waterdog.yml or plugin.yml!");
+                Server.getInstance().getLogger().warn("Jar file " + file.getName() + " doesnt contain a dolemgo.yml or plugin.yml!");
                 return null;
             }
 
